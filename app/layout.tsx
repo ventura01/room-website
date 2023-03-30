@@ -1,4 +1,10 @@
 import './globals.css'
+import {League_Spartan} from 'next/font/google'
+
+const leagueSpartan =League_Spartan({
+  subsets:['latin'],
+  weight:['300','500','700']
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={`${leagueSpartan.className}`}>
+      <body className='bg-slate-50'>{children}</body>
     </html>
   )
 }

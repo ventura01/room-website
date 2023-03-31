@@ -1,8 +1,14 @@
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { MdMenu, MdOutlineClose } from "react-icons/md";
 
-type NavProps = { name: string; route: string };
+interface NavProps {
+  name: string;
+  route: string;
+}
 
 const navLinks: NavProps[] = [
   { name: "home", route: "#home" },
@@ -11,23 +17,45 @@ const navLinks: NavProps[] = [
   { name: "contact", route: "#contact" },
 ];
 
-const Navbar = (props: NavProps) => {
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header>
-      <nav className="flex absolute top-10 left-10 items-center ">
-        <div className="mr-16">
+      <nav className="absolute w-full left-8 top-10 items-center md:flex ">
+        <div className="ml-[35%] md:ml-0 md:mr-16">
           <Image src="/logo.svg" alt="logo" width={75} height={75} />
         </div>
         <div className="">
-          <ul className="flex text-white gap-12">
+          <ul
+            className={`${
+              menuOpen
+                ? "bg-white px-10 py-10 text-black"
+                : "hidden gap-12 text-white md:flex"
+            }`}
+          >
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.route}>
+              <Link
+                key={link.name}
+                href={link.route}
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
                 <li>{link.name}</li>
               </Link>
             ))}
           </ul>
         </div>
       </nav>
+      <div
+        className="absolute left-8 top-10 cursor-pointer md:hidden"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? (
+          <MdOutlineClose size={"1.5rem"} color={"#fff"} />
+        ) : (
+          <MdMenu size={"1.5rem"} color={"#fff"} />
+        )}
+      </div>
     </header>
   );
 };

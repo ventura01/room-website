@@ -60,6 +60,7 @@ const HeroSection = (props: Props) => {
             width={600}
             height={600}
             className="h-full w-full object-cover object-center"
+            priority
           />
         </div>
         <article className="col-start-1 col-end-5 row-start-3 row-end-4 px-8 py-14 md:col-start-5 md:col-end-8 md:row-start-1 md:row-end-3 md:px-36 md:py-24">

@@ -37,7 +37,7 @@ const Navbar = () => {
             <ul
               className={`md:gap-12 md:text-white ${
                 menuOpen
-                  ? "px-16 absolute left-10 top-8 bg-white pt-10 pb-5 text-veryDarkGray md:hidden"
+                  ? "absolute left-10 top-8 bg-white px-16 pb-5 pt-10 text-veryDarkGray md:hidden"
                   : "hidden md:flex"
               }`}
             >
@@ -45,9 +45,11 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.route}
-                  onClick={() => setMenuOpen(!menuOpen)}
+                  onClick={() => setMenuOpen(false)}
                 >
-                  <li className={`${menuOpen && "mb-6"}`}>{link.name}</li>
+                  <li className={`${menuOpen && "mb-6 hover:text-gray-400"}`}>
+                    {link.name}
+                  </li>
                 </Link>
               ))}
             </ul>

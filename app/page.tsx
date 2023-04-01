@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className="relative container mx-auto">
+    <main className="container relative mx-auto">
       <Navbar />
       <HeroSection />
     </main>

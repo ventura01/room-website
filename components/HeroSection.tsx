@@ -52,13 +52,13 @@ const HeroSection = (props: Props) => {
 
   return (
     <main>
-      <section className="grid grid-cols-4 grid-rows-[10fr_1fr_10fr] bg-white md:grid-cols-7 md:grid-rows-[10fr_1fr]">
+      <section className="grid grid-cols-4 grid-rows-[6fr_.75fr_10fr] bg-white md:grid-cols-7 md:grid-rows-[10fr_1fr]">
         <div className="col-start-1 col-end-5 row-start-1 row-end-3 md:col-start-1 md:col-end-5 md:row-start-1 md:row-end-3">
           <Image
             src={heroArticles[index].imgUrl}
             alt="hero-img"
-            width={1600}
-            height={1600}
+            width={600}
+            height={600}
             className="h-full w-full object-cover object-center"
           />
         </div>

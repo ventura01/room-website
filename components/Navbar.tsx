@@ -22,40 +22,48 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="absolute w-full left-8 top-10 items-center md:flex ">
-        <div className="ml-[35%] md:ml-0 md:mr-16">
-          <Image src="/logo.svg" alt="logo" width={75} height={75} />
-        </div>
-        <div className="">
-          <ul
-            className={`${
-              menuOpen
-                ? "bg-white px-10 py-10 text-black"
-                : "hidden gap-12 text-white md:flex"
-            }`}
-          >
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.route}
-                onClick={() => setMenuOpen(!menuOpen)}
-              >
-                <li>{link.name}</li>
-              </Link>
-            ))}
-          </ul>
+      <nav className="relative">
+        <div className="absolute top-10 w-full md:flex md:items-center">
+          <div className="md:ml-8  md:mr-16">
+            <Image
+              src="/logo.svg"
+              alt="logo"
+              width={75}
+              height={75}
+              className="mx-auto h-auto w-auto"
+            />
+          </div>
+          <div>
+            <ul
+              className={`md:gap-12 md:text-white ${
+                menuOpen
+                  ? "px-16 absolute left-10 top-8 bg-white pt-10 pb-5 text-veryDarkGray md:hidden"
+                  : "hidden md:flex"
+              }`}
+            >
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.route}
+                  onClick={() => setMenuOpen(!menuOpen)}
+                >
+                  <li className={`${menuOpen && "mb-6"}`}>{link.name}</li>
+                </Link>
+              ))}
+            </ul>
+            <div
+              className="absolute -top-1 left-5 cursor-pointer md:hidden"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              {menuOpen ? (
+                <MdOutlineClose size={"1.5rem"} color={"#fff"} />
+              ) : (
+                <MdMenu size={"1.5rem"} color={"#fff"} />
+              )}
+            </div>
+          </div>
         </div>
       </nav>
-      <div
-        className="absolute left-8 top-10 cursor-pointer md:hidden"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? (
-          <MdOutlineClose size={"1.5rem"} color={"#fff"} />
-        ) : (
-          <MdMenu size={"1.5rem"} color={"#fff"} />
-        )}
-      </div>
     </header>
   );
 };

@@ -10,6 +10,7 @@ import {
   BsTwitch,
   BsTwitter,
   BsFacebook,
+  BsWhatsapp
 } from "react-icons/bs";
 
 type Props = {};
@@ -20,6 +21,7 @@ interface Article {
   imgUrl: string;
   id: number;
 }
+let fecha: number = new Date().getFullYear();
 
 const heroArticles: Article[] = [
   {
@@ -126,7 +128,7 @@ const HeroSection = (props: Props) => {
         </div>
       </section>
       <section className="grid grid-cols-1 md:grid-cols-7">
-        <div className="bg-white px-8 py-14 md:col-start-1 md:col-end-3 md:px-24 md:py-20">
+        <div className="bg-white px-12 py-14 md:col-start-1 md:col-end-3 md:px-28 md:py-20">
           <h3 className="pb-4 text-xl font-bold">Features</h3>
           <ol className="list-disc text-sm font-light text-darkGray">
             <li>Durability</li>
@@ -163,18 +165,19 @@ const HeroSection = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="bg-white px-8 py-14 md:col-start-6 md:col-end-8 md:px-24 md:py-20">
+        <div className="bg-white px-12 py-14 md:col-start-6 md:col-end-8 md:px-24 md:py-20">
           <h3 className="pb-4 text-xl font-bold">Contact</h3>
           <p className="text-darkGray">1270 Runolfsdottir Neck</p>
           <p className="text-darkGray">25363-2595</p>
           <p className="mb-4 text-darkGray">Kingview</p>
-          <div className="flex gap-5 mb-4">
+          <div className="mb-4 flex gap-5">
             <BsInstagram />
             <BsTwitch />
             <BsTwitter />
             <BsFacebook />
+            <BsWhatsapp />
           </div>
-          <p className="text-xs font-light">All Rights Reserved &copy; 2023.</p>
+          <p className="text-xs font-light">All Rights Reserved &copy; {fecha}.</p>
         </div>
       </section>
     </main>

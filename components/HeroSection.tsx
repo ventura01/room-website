@@ -2,7 +2,15 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { BsArrowRight, BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import {
+  BsArrowRight,
+  BsChevronLeft,
+  BsChevronRight,
+  BsInstagram,
+  BsTwitch,
+  BsTwitter,
+  BsFacebook,
+} from "react-icons/bs";
 
 type Props = {};
 
@@ -95,8 +103,8 @@ const HeroSection = (props: Props) => {
           />
         </div>
         <article className="bg-white px-8 py-14 md:col-start-3 md:col-end-6 md:px-24 md:py-20">
-          <h2 className="mb-5 text-2xl font-bold uppercase tracking-widest">
-            About our furniture
+          <h2 className="mb-5 text-2xl font-bold tracking-widest">
+            About our Furniture
           </h2>
           <p className="text-sm text-darkGray">
             Our multifunctional collection blends design and function to suit
@@ -115,6 +123,58 @@ const HeroSection = (props: Props) => {
             height={800}
             className="h-full w-full object-cover object-center"
           />
+        </div>
+      </section>
+      <section className="grid grid-cols-1 md:grid-cols-7">
+        <div className="bg-white px-8 py-14 md:col-start-1 md:col-end-3 md:px-24 md:py-20">
+          <h3 className="pb-4 text-xl font-bold">Features</h3>
+          <ol className="list-disc text-sm font-light text-darkGray">
+            <li>Durability</li>
+            <li>Recicled Materials</li>
+            <li>Green Processed</li>
+            <li>Lorem, ipsum.</li>
+            <li>Tenetur unde vero</li>
+          </ol>
+        </div>
+        <div className="md:col-start-3 md:col-end-6">
+          <div className="grid h-full w-full grid-cols-6 ">
+            <div className="col-start-1 col-end-3">
+              <Image
+                src="/desktop-image-hero-1.jpg"
+                alt="img"
+                height={250}
+                width={250}
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
+            <div className="col-start-3 col-end-5 bg-stone-700"></div>
+            <div className="col-start-5 col-end-7 bg-stone-800"></div>
+            <div className="col-start-1 col-end-3 bg-stone-500"></div>
+            <div className="col-start-3 col-end-5 bg-stone-400"></div>
+            <div className="col-start-5 col-end-7 bg-gray-900">
+              {" "}
+              <Image
+                src="/desktop-image-hero-2.jpg"
+                alt="img"
+                height={250}
+                width={250}
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="bg-white px-8 py-14 md:col-start-6 md:col-end-8 md:px-24 md:py-20">
+          <h3 className="pb-4 text-xl font-bold">Contact</h3>
+          <p className="text-darkGray">1270 Runolfsdottir Neck</p>
+          <p className="text-darkGray">25363-2595</p>
+          <p className="mb-4 text-darkGray">Kingview</p>
+          <div className="flex gap-5 mb-4">
+            <BsInstagram />
+            <BsTwitch />
+            <BsTwitter />
+            <BsFacebook />
+          </div>
+          <p className="text-xs font-light">All Rights Reserved &copy; 2023.</p>
         </div>
       </section>
     </main>
